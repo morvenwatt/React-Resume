@@ -9,28 +9,47 @@
 </head>
 
 <body>
-        <main>
-                <div id='contact'></div>
-                <div id='work'></div>
-                <div id='education'></div>
-        </main>
-                
-        <script src="https://unpkg.com/react@16/umd/react.development.js">
-        </script>
+        <header><h1>RESUME EXTRAORDINAIRE</h1></header>
+    <main>
+        <address id='contact'></address>
+        <div>
+            <img src='https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg' alt='Picture of me'>
+        </div>
+        <div id='work'>
+            <h2>Work History</h2>
+        </div>
+        <div id='education'>
+            <h2>Education</h2>
+        </div>
+    </main>
 
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
-        </script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
 
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
-        </script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
 
-        <script type="text/babel">
-        function Person (props) {
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+
+    <script type="text/babel">
+
+const emailAddress = `morvenwatt@gmail.com`;
+const target = '_blank';
+const content = 'Email Me!'
+
+const anchor = (
+  <a href={emailAddress} target={target}>
+    {content}
+  </a>
+);
+
+function Person (props) {
   return (
   <div className='person'>
     <h1>{props.name}</h1>
       <p>Age: {props.age}</p>
-      <p>Email: {props.email}</p>
+      <p>Email: {anchor}</p>
       <p>Phone: {props.phone}</p>
   </div>
   );
@@ -38,7 +57,7 @@
 
 var address = (
   <div>
-  <Person name='Morven Watt' age='31'    email='morvenwatt@gmail.com' phone='970-409-0547'/>
+  <Person name='Morven Watt' age='31' email='morvenwatt@gmail.com' phone='970-409-0547'/>
   </div>
 );
 
@@ -55,10 +74,9 @@ function Work (jobs){
 
 var workHistory = (
 <div>
-  <Work company='Coding R Us' title='Junior Developer' dates='2011-2013' description='Worked with HTML, CSS & Javascript'/>
-  <Work company='CopyWriting Koalas'
-    title='Lead Copywriter' dates='2013-Present' description='Wrote a lot of copy. Hilarious Copy. Great Stuff.'/>
-   </div>
+  <Work company='Coding R Us' title='Junior Developer' dates='2011-2013' description='Worked with HTML, CSS and Javascript'/>
+  <Work company='CopyWriting Koalas' title='Lead Copywriter' dates='2013-Present' description='Wrote a lot of copy. Hilarious Copy. Great Stuff.'/>
+</div>
 );
 
 function Education(school){
@@ -85,16 +103,7 @@ ReactDOM.render(workHistory, document.querySelector('#work'));
     
 ReactDOM.render(schoolHistory, document.querySelector('#education'));
 
-
-
-
-    
-
-
-
-
-        
-        </script>
+         </script>
 
 </body>
 
